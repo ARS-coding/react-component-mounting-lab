@@ -12,13 +12,9 @@ class App extends Component {
 
   //Your code here:
 
-
-
-
-
-
-
-
+  componentDidMount() {
+    this.handleAddTimer();
+  }
 
   // No need to modify anything in render or the class methods below
   // Unless, of course, you're curious about how it all works
@@ -46,7 +42,7 @@ class App extends Component {
   handleAddTimer = () => {
     this.setState(prevState => ({
       timerIDs: [...prevState.timerIDs, Math.floor(Math.random()*1000)]
-    }))
+    })) // add a new id to the state called timerIDs, cause a rerender so
   }
 
   // removeTimer updates state, removing any timer that matches the provided author
